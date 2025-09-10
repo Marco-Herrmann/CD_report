@@ -28,3 +28,6 @@
 *.FCStd
 *.fdb_latexmk
 *.fls
+*.dep
+*.dpth
+*.md5

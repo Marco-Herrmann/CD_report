@@ -14,28 +14,17 @@ right=25mm,
 	
 	\qquad
 	
-	Marco Herrmann, %$^1$ 
+	Marco Herrmann, 
 	Simon R. Eugster
 
 	\today
-	
-	% \qquad
-	
-	% $^{1}$Dynamics and Control, Eindhoven University of Technology, Eindhoven, The Netherlands
 	
 \end{center}
 
 
 \section*{Introduction}
-
-This \LaTeX file gives additional instructions how we expects students to write thier report within the Computational Dynamics group. It is an extension on the Dynamics \& Control template. Herein, we give help on
 %
-\begin{itemize}
-	\item writing down equations and using the provided commands, 
-	\item making mechanical drawings in inkscape, 
-	\item exporting simulation results (from cardillo),
-	\item creating figures with pgf plots.
-\end{itemize}
+This \LaTeX-file gives additional instructions how we expects students to write thier report within the Computational Dynamics group. It is an extension on the Dynamics \& Control template. Herein, we give help on writing down equations and using the provided commands, making mechanical drawings in inkscape, and creating figures with pgf plots.
 %
 \section{Writing equations and usefull commands}
 %
@@ -54,24 +43,44 @@ During the process of writing the report, you might indicate some changes in the
 
 \section{Drawing in inkscape}
 %
-\subsection*{Lines}
-\todo{Stolen from INM template}
-\begin{itemize}
-	\item Very thick 0.6 mm
-	\item thick 0.4 mm
-	\item thin 0.2 mm
-	\item very thin 0.1 mm
-	\item tip of an arrow: 15$^\circ$
-\end{itemize}
-One should mainly use thick and thin
-
-\subsection*{Mechanical models}
+For drawing, we advice you to use only the following linewidths:
 %
-\begin{itemize}
-	\item thick (0.4 mm): Body contours, forces and moments
-	\item thin (0.2 mm): Coordinate systems, geometric measurements, hatching, guide lines, springs, dampers, gravitational acceleration
-\end{itemize}
+\begin{center}
 
+\begin{tabular}{ccccc}
+	\toprule
+	Very thick 
+		& Thick
+		& Thin
+		& Very thin \\[2mm]
+	0.6 mm 
+		& 0.4 mm 
+		& 0.2 mm
+		& 0.1 mm \\
+	\bottomrule
+\end{tabular}
+\end{center}
+%
+Mainly, thick and thin lines should be drawn. For arrows, the angle at the tip should be 15$^\circ$. When mechanical models are drawn, \textbf{thick} lines (0.4 mm) are used for body contours, forces and moments, while \textbf{thin} lines (0.2 mm) are used for coordinate systems, geometric measurements, hatching, guide lines, springs, dampers, gravitational acceleration. An example of a drawing of a mechanical system can be found in Figure~\ref{fig:AFM}.
+%
+\subsection{Adding text on drawings}
+%
+To finish the drawing, text containing information of geometric measures, vectors, mases, stiffness $\dots$ must be added. To do so, one can either use the Inkscape extension TexText, or write the text with the default text tool and use special export settings. TexText completely works in Inkscape, which means that the commands are not directly available. Furthermore, the text can be distrubed or scaled and a different font can be used without noticing. A benifit of TexText is the immidiat visibility of the inserted text. In contrast to this, the defualt text tool allows to write text using the math environment. For the export, one needs to choose under \textit{Text output options} the option \textit{Omit text in PDF and create LaTeX file}, which produces than a name.pdf file without any labels and a name.pdf\_tex file containing information where and what labels to put on drawing. With this method, the text on the drawing is compiled in the end together with the rest of the document. 
+%
+\begin{figure}
+	\centering
+	\input{graphics/AFM.pdf_tex}
+	\caption{Mechanical model of the atomic force microscop with the excitations $a(t)$ and $\gamma(t)$. \question{How to put this: The caption of a figure should always classify to which experiment/simulation/$\dots$ it belongs.}}
+	\label{fig:AFM}
+\end{figure}
+%
+\section{Creating plots}
+%
+In case of a lot of plots and figures, it might be benefitial to create each figure in a sperate file to keep the main file clean. The individual files can then be included in the main report using the \textit{$\backslash$input} command. Since the possibilities to use tikz and pgfplots are very large, this document will just provide a simple example in Figure~\ref{fig:hermite_interpolation}. For explanations and more information we refer to the corresponding manuals. The python code to produce the data used in Figure~\ref{fig:hermite_interpolation} is also given with the files of this document. Therein, you can see which numpy command is used to save the results in this structure. \question{Shall we give advice on the plot line width? The widths from the INM template are given on the next side. I would recommend to set the linewidth once in \textit{pgfplotsset}, and always activate the grid.} \todo{Increase plot hieght if possible in the end!} \question{How to bring the two plots next to each other? Minipage? Subfigure?}
+
+\input{plots/position_tangent.tex}%
+
+\cleardoublepage
 \subsection*{Computed lines}
 \begin{itemize}
 	\item Coordinate systems: 0.2 mm
@@ -80,31 +89,5 @@ One should mainly use thick and thin
 	\item sets of functions: 0.2 mm, to highlight individual ones: 0.4 mm
 	\item coordinate grid: 0.1 mm (if neccessary)
 \end{itemize}
-
-\subsection{Adding text on drawings}
 %
-To finish the drawing, 
-
-\begin{figure}
-	\centering
-	\input{graphics/AFM.pdf_tex}
-\end{figure}
-
-
-
-% Feel free to write anything you want here!
-% We can also make a reference to literature, see~\cite{Eugster2023a}.
-
-
-% \appendix
-
-% \section{Appendix}
-
-% Feel free to write an appendix.
-
-
-
-
-% \bibliographystyle{abbrv}
-% \bibliography{literature}
 \end{document} 

@@ -7,11 +7,26 @@
 \usepackage[footnotesize]{caption}
 \usepackage{dsfont,booktabs,threeparttable}
 \usepackage{longtable,booktabs}
-\usepackage{tikz}
-\usetikzlibrary{calc}
 
+%% tikz & pgfplots
+\usepackage{tikz}
+\usetikzlibrary{calc,patterns,positioning,external} % TikZ-Libraries
+\tikzexternalize[prefix=tikz/] % prefix for externalize
+
+\usepackage{pgfplots}
+\usepgfplotslibrary{groupplots}
+\usepackage{pgfplotstable}
 \graphicspath{{graphics/}} %Setting the graphicspath
 
+% settings for PGFPlots
+\pgfplotsset{
+    compat=1.18, 
+    every axis plot/.append style={line width=0.4mm}, 
+}
+
+% more pacakges
+\usepackage{ifthen}
+\usepackage{array}
 \usepackage{cite}
 
 % format section headers
