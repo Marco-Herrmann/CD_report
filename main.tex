@@ -10,34 +10,101 @@ right=25mm,
 \begin{document}
 	
 \begin{center}
-	\textbf{\large Title}
+	\textbf{\large Additional instructions for reports in the Computational Dynamics group}
 	
 	\qquad
 	
-	Marco Herrmann$^1$
+	Marco Herrmann, %$^1$ 
+	Simon R. Eugster
+
+	\today
 	
-	\qquad
+	% \qquad
 	
-	$^{1}$Dynamics and Control, Eindhoven University of Technology, Eindhoven, The Netherlands
+	% $^{1}$Dynamics and Control, Eindhoven University of Technology, Eindhoven, The Netherlands
 	
 \end{center}
 
 
-\section{Section}
+\section*{Introduction}
 
-Feel free to write anything you want here!
-We can also make a reference to literature, see~\cite{Eugster2023a}.
+This \LaTeX file gives additional instructions how we expects students to write thier report within the Computational Dynamics group. It is an extension on the Dynamics \& Control template. Herein, we give help on
+%
+\begin{itemize}
+	\item writing down equations and using the provided commands, 
+	\item making mechanical drawings in inkscape, 
+	\item exporting simulation results (from cardillo),
+	\item creating figures with pgf plots.
+\end{itemize}
+%
+\section{Writing equations and usefull commands}
+%
+Extending the nomenclature of the template, we use lowercase letters to indicate scalar variables, i.e., $c \in \mR$, bold lowercase letters to indicate vector quantities, i.e., $\vv \in \mR^3$ and bold uppercase letters to indicate matrix quantites, i.e., $\vA \in \mR^{3 \times 3}$. Since these are very common in mechanical reports, the file \textbf{header.tex} contains a lot of usefull commands to write down these bold characters by writing $\backslash$vv or $\backslash$vA in these example. Also bold greek letters are included with a similar structure to make writing down equations even more simple. We can write for example 
+%
+\begin{equation}
+	\vga = \dot{\vg}
+	\textAND
+	\vLa = \int \vla \diff[t]
+	\, .
+\end{equation}
+%
+Also have a look at the other commands, allowing you to write calligraphic and fracture letters if needed. 
+
+During the process of writing the report, you might indicate some changes in the text, or you want to put down a placeholder or a question directly. You can do so by using \correctb{$\backslash$correctb}, \correctr{$\backslash$correctr}, \correcto{$\backslash$correcto}, \todo{$\backslash$todo} and \question{$\backslash$question}.
+
+\section{Drawing in inkscape}
+%
+\subsection*{Lines}
+\todo{Stolen from INM template}
+\begin{itemize}
+	\item Very thick 0.6 mm
+	\item thick 0.4 mm
+	\item thin 0.2 mm
+	\item very thin 0.1 mm
+	\item tip of an arrow: 15$^\circ$
+\end{itemize}
+One should mainly use thick and thin
+
+\subsection*{Mechanical models}
+%
+\begin{itemize}
+	\item thick (0.4 mm): Body contours, forces and moments
+	\item thin (0.2 mm): Coordinate systems, geometric measurements, hatching, guide lines, springs, dampers, gravitational acceleration
+\end{itemize}
+
+\subsection*{Computed lines}
+\begin{itemize}
+	\item Coordinate systems: 0.2 mm
+	\item additional measurements: 0.2 mm
+	\item individual functions: 0.4 mm
+	\item sets of functions: 0.2 mm, to highlight individual ones: 0.4 mm
+	\item coordinate grid: 0.1 mm (if neccessary)
+\end{itemize}
+
+\subsection{Adding text on drawings}
+%
+To finish the drawing, 
+
+\begin{figure}
+	\centering
+	\input{graphics/AFM.pdf_tex}
+\end{figure}
 
 
-\appendix
 
-\section{Appendix}
-
-Feel free to write an appendix.
+% Feel free to write anything you want here!
+% We can also make a reference to literature, see~\cite{Eugster2023a}.
 
 
+% \appendix
+
+% \section{Appendix}
+
+% Feel free to write an appendix.
 
 
-\bibliographystyle{abbrv}
-\bibliography{literature}
+
+
+% \bibliographystyle{abbrv}
+% \bibliography{literature}
 \end{document} 
